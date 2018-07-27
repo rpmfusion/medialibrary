@@ -2,7 +2,7 @@
 
 Name:           medialibrary
 Version:        0.2.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Cross platform media library
 
 License:        GPLv2+
@@ -60,6 +60,9 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 
 
 %changelog
+* Fri Jul 27 2018 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 0.2.0-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
+
 * Mon Feb 26 2018 Nicolas Chauvet <kwizart@gmail.com> - 0.2.0-1
 - Update to 0.2.0
 
