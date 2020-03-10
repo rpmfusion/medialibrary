@@ -1,8 +1,8 @@
-%global commit 67797d1bb8e76d8e8fd4e0674eca199eabac3efc
+%global commit 0c3868052024a1c6256383294e92baeeedcb44e9
 
 Name:           medialibrary
-Version:        0.2.0
-Release:        5%{?dist}
+Version:        0.6.0
+Release:        1%{?dist}
 Summary:        Cross platform media library
 
 License:        GPLv2+
@@ -60,6 +60,9 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 
 
 %changelog
+* Tue Mar 10 2020 Nicolas Chauvet <kwizart@gmail.com> - 0.6.0-1
+- Update to 0.6.0
+
 * Wed Feb 05 2020 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 0.2.0-5
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 
