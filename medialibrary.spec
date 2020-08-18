@@ -2,7 +2,7 @@
 
 Name:           medialibrary
 Version:        0.6.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Cross platform media library
 
 License:        GPLv2+
@@ -61,6 +61,9 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 
 
 %changelog
+* Tue Aug 18 2020 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 0.6.0-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
+
 * Tue Mar 10 2020 Nicolas Chauvet <kwizart@gmail.com> - 0.6.0-1
 - Update to 0.6.0
 
