@@ -1,22 +1,26 @@
 %global commit 0c3868052024a1c6256383294e92baeeedcb44e9
 
 Name:           medialibrary
-Version:        0.6.0
-Release:        6%{?dist}
+Version:        0.12.3
+Release:        1%{?dist}
 Summary:        Cross platform media library
 
 License:        GPLv2+
 URL:            https://code.videolan.org/videolan/medialibrary
-Source0:        %{url}/repository/%{version}/archive.tar.gz#/%{name}-%{version}.tar.gz
-Patch0:         gcc-10.patch
+Source0:        %{url}/-/archive/%{version}/%{name}-%{version}.tar.gz
+Patch0:         gcc-13.patch
 
 BuildRequires:  libtool
 
 BuildRequires:  gcc-c++
+BuildRequires:  pkgconfig(benchmark)
 BuildRequires:  pkgconfig(libjpeg)
-BuildRequires:  pkgconfig(libvlc)
+#BuildRequires:  pkgconfig(libvlc)
 BuildRequires:  pkgconfig(libvlcpp)
+BuildRequires:  pkgconfig(libxxhash)
 BuildRequires:  pkgconfig(sqlite3)
+BuildRequires:  cmake
+BuildRequires:  meson
 
 
 %description
@@ -33,22 +37,18 @@ developing applications that use %{name}.
 
 
 %prep
-%autosetup -p1 -n medialibrary-%{version}-%{commit}
-./bootstrap
-
+%autosetup -p1 -n medialibrary-%{version}
 
 %build
-%configure --disable-static
-%make_build V=1
-
+%meson -Dlibvlc=disabled
+%meson_build
 
 %install
-%make_install
+%meson_install
 find %{buildroot} -name '*.la' -exec rm -f {} ';'
 
-
-%ldconfig_scriptlets
-
+%check
+%meson_test
 
 %files
 %license COPYING
@@ -61,6 +61,10 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 
 
 %changelog
+* Fri Jan 27 2023 Sérgio Basto <sergio@serjux.com> - 0.12.3-1
+- Update medialibrary to 0.12.3
+- Disable libvlc fix the build (tip from Debian package)
+
 * Sun Aug 07 2022 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 0.6.0-6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild and ffmpeg
   5.1
