@@ -1,14 +1,13 @@
-%global commit 0c3868052024a1c6256383294e92baeeedcb44e9
+%global commit 8c56e26c625d757994cffeea84d2a0a2e6033dee
 
 Name:           medialibrary
-Version:        0.12.3
-Release:        3%{?dist}
+Version:        0.13.0
+Release:        1%{?dist}
 Summary:        Cross platform media library
 
 License:        GPLv2+
 URL:            https://code.videolan.org/videolan/medialibrary
 Source0:        %{url}/-/archive/%{version}/%{name}-%{version}.tar.gz
-Patch0:         gcc-13.patch
 
 BuildRequires:  libtool
 
@@ -61,6 +60,9 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 
 
 %changelog
+* Fri Jun 07 2024 Nicolas Chauvet <kwizart@gmail.com> - 0.13.0-1
+- Update to 0.13.0
+
 * Sat Feb 03 2024 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 0.12.3-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild
 
