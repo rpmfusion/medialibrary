@@ -1,0 +1,20 @@
+--- ./include/medialibrary/IQuery.h.orig	2025-03-03 01:10:54.919983959 +0000
++++ ./include/medialibrary/IQuery.h	2025-03-03 01:11:09.711368135 +0000
+@@ -22,6 +22,7 @@
+ 
+ #pragma once
+ 
++#include <cstdint>
+ #include <vector>
+ #include <memory>
+ 
+--- ./include/medialibrary/filesystem/IFileSystemFactory.h.orig	2025-03-03 02:17:18.662115700 +0000
++++ ./include/medialibrary/filesystem/IFileSystemFactory.h	2025-03-03 02:17:52.480830949 +0000
+@@ -24,6 +24,7 @@
+ 
+ #include <memory>
+ #include <string>
++#include <cstdint>
+ 
+ namespace medialibrary
+ {
