@@ -1,8 +1,8 @@
 %global commit 8c56e26c625d757994cffeea84d2a0a2e6033dee
 
 Name:           medialibrary
-Version:        0.13.1
-Release:        2%{?dist}
+Version:        0.13.2
+Release:        1%{?dist}
 Summary:        Cross platform media library
 
 License:        GPLv2+
@@ -61,6 +61,9 @@ find %{buildroot} -name '*.la' -delete
 
 
 %changelog
+* Wed Nov 12 2025 Nicolas Chauvet <kwizart@gmail.com> - 0.13.2-1
+- Update to 0.13.2
+
 * Sun Jul 27 2025 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 0.13.1-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_43_Mass_Rebuild
 
