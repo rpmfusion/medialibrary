@@ -8,7 +8,6 @@ Summary:        Cross platform media library
 License:        GPLv2+
 URL:            https://code.videolan.org/videolan/medialibrary
 Source0:        %{url}/-/archive/%{version}/%{name}-%{version}.tar.gz
-Patch0:         gcc-15.patch
 
 BuildRequires:  libtool
 
